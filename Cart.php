@@ -21,9 +21,14 @@ class Cart
      */
     public function addProduct($product)
     {
-        $CartItem = new CartItem($product, 1);
-        $this->items[$product->getId()] = $CartItem;
-        return $CartItem;
+        if (isset($this->items[$product -> getId()])){
+
+        } else {
+            $CartItem = new CartItem($product, 1);
+            $this->items[$product->getId()] = $CartItem;
+            return $CartItem;
+
+        }
     }
 
 
